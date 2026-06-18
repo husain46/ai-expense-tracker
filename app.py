@@ -28,7 +28,10 @@ from dotenv import load_dotenv
 # ---------------------------------------------------------------------------
 # Setup
 # ---------------------------------------------------------------------------
-pytesseract.pytesseract.tesseract_cmd = r"D:\Tesseract-OCR\tesseract.exe"
+if os.path.exists(r"D:\Tesseract-OCR\tesseract.exe"):
+    pytesseract.pytesseract.tesseract_cmd = r"D:\Tesseract-OCR\tesseract.exe"
+elif os.path.exists("/usr/bin/tesseract"):
+    pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
 
 load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
