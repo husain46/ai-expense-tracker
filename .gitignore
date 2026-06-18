@@ -1,0 +1,6 @@
+.env
+venv/
+database/expenses.db
+__pycache__/
+test_app.py
+*.pyc
